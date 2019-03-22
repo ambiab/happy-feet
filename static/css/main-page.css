@@ -35,3 +35,15 @@ h1 {
     font-family: 'Caveat Brush';
     font-size: 90px;
 }
+
+.menu-button {
+    width: 20px;
+    height: 20px;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
