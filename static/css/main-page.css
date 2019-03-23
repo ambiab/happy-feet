@@ -7,33 +7,54 @@ body {
     position: relative;
 }
 
-body::before {
-    position: absolute;
-    content: "";
+.background-image-1 {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
 
-    background: url(../sources/images/hiking.jpg) no-repeat center center fixed;
+    position: relative;
+    width: 100%;
+    height: 550px;
+
+    background: url(../sources/images/hiking.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 
-    opacity: 0.5;
-
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-
-    z-index: -1;
+    opacity: 0.8;
 }
 
-.main-page {
+.background-image-2 {
     display: flex;
     flex-direction: column; 
     align-items: center;
     justify-content: center;
+
+    position: relative;
+    width: 100%;
+    height: 550px;
+
+    background: url(../sources/images/hiking-2.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: 0.8;
 }
 
-h1 {
+.getstarted {
+    border: 2px solid rgb(87, 92, 87);
+    border-radius: 20px;
+
     font-family: 'Caveat Brush';
-    font-size: 90px;
+
+    font-size: 30px;
+    
+    padding: 40px;
+    margin-top: 100px;
+    background: rgba(121, 128, 120, 0.85)
 }
 
 .menu-button {
@@ -46,4 +67,14 @@ h1 {
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.introduction {
+    position: relative;
+
+    padding: 50px 80px;
+
+    color: #777;
+    background-color: rgb(120, 171, 201);
+    text-align: center;
 }
