@@ -55,9 +55,9 @@ h1 {
     font-family: 'Caveat Brush';
 
     font-size: 30px;
-    
+
     padding: 40px;
-    margin-top: 100px;
+    margin-top: 50px;
     background: rgba(121, 128, 120, 0.85)
 }
 
@@ -84,4 +84,47 @@ h1 {
     color: #777;
     background-color: rgb(120, 171, 201);
     text-align: center;
+}
+
+.search-wrapper {
+   display: flex;
+   flex-direction: row;
+
+   justify-content: space-around;
+}
+
+#get-current-location, #search-location {
+    margin: 0 10px;
+
+    border-radius: 20px;
+
+    background: rgb(107, 104, 104);
+    border: 2px solid rgb(107, 104, 104);
+
+    padding: 10px;
+
+    color: peachpuff;
+}
+
+#get-current-location {
+    font-size: 13px;
+}
+
+::-webkit-input-placeholder {
+    color: peachpuff;
+    font-size: 13px;
+}
+::-moz-placeholder {
+    color: peachpuff;
+    font-size: 13px;
+}
+
+:-ms-input-placeholder {
+    color: peachpuff;
+    font-size: 13px;
+}
+
+::placeholder {
+    color: peachpuff;
+    font-size: 13px;
 }
