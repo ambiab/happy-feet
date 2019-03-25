@@ -70,15 +70,23 @@ h1 {
     height: 20px;
 }
 
+.close-button {
+    cursor: pointer;
+    position: relative;
+    left: 130px;
+}
+
+
 .menu {
     min-height: 100%;
+    min-width: 10%;
     display: none;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.438);
+    background-color: rgba(181, 229, 252, 0.993);
     overflow-x: hidden;
-    padding-top: 60px;
+    padding-top: 30px;
     transition: 3s;
 }
 
@@ -86,6 +94,8 @@ li {
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
     text-align: left;
+    padding-bottom: 2px;
+    padding-top: 5px;
 }
 
 .introduction {
