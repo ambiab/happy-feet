@@ -62,18 +62,30 @@ h1 {
 }
 
 .menu-button {
+    cursor: pointer;
     position: absolute;
-    left: 0;
-
+    top: 30px;
+    left: 30px;
     width: 20px;
     height: 20px;
 }
 
 .menu {
+    min-height: 100%;
     display: none;
     position: fixed;
     top: 0;
     left: 0;
+    background-color: rgba(255, 255, 255, 0.438);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 3s;
+}
+
+li {
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
 }
 
 .introduction {
