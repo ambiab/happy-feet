@@ -46,17 +46,15 @@
                 <div class='getstarted'>Lets get started</div>
                 <div class='search-wrapper'>
                     <div class='search-wrapper--button'>
-                        <button id='get-current-location'>
-                            <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                        <button id='get-current-location' onclick='getLocation()'>
+                            <i class='fa fa-location-arrow' aria-hidden='true'></i>
                         </button>
                     </div>
                     <div class='search-wrapper--button'>
-                        <form id='search-location'>
-                            <input type="search" placeholder="Search">
+                        <form id='search-location' action="/result" method="post">
+                            <input id='location-name' type='search' placeholder='Search' name='location-name'>
                         </form>
                     </div>
-                    
-                    <!-- <input id='search-location' placeholder='Search Location'/> -->
                 </div>
             </div>
         </div>

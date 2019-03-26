@@ -1,8 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const getLocationButton = document.getElementById('get-current-location');
-  getLocationButton.addEventListener('click', getLocation);
-})
-
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -11,7 +6,7 @@ function getLocation() {
         lng: position.coords.longitude
       };
 
-      $.post("/postmethod", {
+      $.post("/postcurrentlocation", {
         currentPosition: JSON.stringify(currentPosition)
       });
 
@@ -20,4 +15,12 @@ function getLocation() {
     // Browser doesn't support Geolocation
     alert('Your browser doesn\'t support geolocation.')
   }
+}
+
+function searchLocation(event) {
+  const address = document.getElementById('location-name').value;
+
+  $.post("/postaddress", {
+    address: address
+  });
 }
