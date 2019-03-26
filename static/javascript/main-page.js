@@ -1,11 +1,11 @@
-document.addEventListener('load', () => {
-    const menuButton = document.querySelector('.menubutton');
+window.addEventListener('load', function() {
+    const menuButton = document.querySelector('.menu-button');
     menuButton.addEventListener('click', () => {
         const menu = document.querySelector('.menu');
-        if (menu.getElementsByClassName.display === 'block') {
-            menu.getElementsByClassName.display === 'none';
-        } else; {
-            menu.getElementsByClassName.display === 'block';
+        if (menu.style.display === 'block') {
+            menu.style.display = 'none';
+	} else {
+           menu.style.display = 'block';
         }
     })
 })
