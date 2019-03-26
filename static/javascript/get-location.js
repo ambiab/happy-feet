@@ -6,10 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      let pos = {
+      const currentPosition = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
+
+      $.post("/postmethod", {
+        currentPosition: JSON.stringify(currentPosition)
+      });
+
     });
   } else {
     // Browser doesn't support Geolocation
