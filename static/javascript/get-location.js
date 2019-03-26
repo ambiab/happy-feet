@@ -1,3 +1,10 @@
+window.onload = function() {
+
+  $('#search-location').submit(function(e){
+    e.preventDefault();
+  });
+}
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -17,7 +24,7 @@ function getLocation() {
   }
 }
 
-function searchLocation(event) {
+function searchLocation() {
   const address = document.getElementById('location-name').value;
 
   $.post("/postaddress", {
