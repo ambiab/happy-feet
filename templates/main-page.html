@@ -3,10 +3,12 @@
     <head>
         <!--Fonts-->
         <link rel="stylesheet" href="../static/css/main-page.css">
-        <link rel="stylesheet" href="../static/css/animation.css">
 
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="../static/javascript/main-page.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="../static/javascript/get-location.js"></script>
+        
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 
         <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,14 +43,20 @@
             </div>
 
             <div class='background-image-2'>
-                <div class='search-wrapper'>
-                    <button id='get-current-location'>Current Location</button>
-                    <input id='search-location' placeholder='Search Location'/>
-                </div>
                 <div class='getstarted'>Lets get started</div>
+                <div class='search-wrapper'>
+                    <div class='search-wrapper--button'>
+                        <button id='get-current-location' onclick='getLocation()'>
+                            <i class='fa fa-location-arrow' aria-hidden='true'></i>
+                        </button>
+                    </div>
+                    <div class='search-wrapper--button'>
+                        <form id='search-location' onsubmit="searchLocation()" >
+                            <input id='location-name' type='search' placeholder='Search'>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-
-        
     </body>
 </html>
