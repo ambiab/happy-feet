@@ -56,4 +56,9 @@ document.addEventListener('DOMContentLoaded', function(){
             console.log('click');
         });
     });
-});
+
+function handleClose() {
+    const popup = document.getElementById('popup');
+    popup.style.opacity = '0';
+    popup.style.visibility = 'hidden';
+}

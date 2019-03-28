@@ -5,10 +5,18 @@
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="../static/javascript/result-page.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class='result-page'>
-        <div id='results' class='results'> 
+        <div id='results' class='results'>
+        </div>
+
+        <div id='popup' class='popup'>
+            <div id='close' class='close' onclick='handleClose()'>
+                <i class="fa fa-window-close" aria-hidden="true"></i>
+            </div>
         </div>
     </div>
 </body>
