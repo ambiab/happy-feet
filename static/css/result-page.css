@@ -66,38 +66,10 @@ a:hover {
     width: 100%;
 }
 
-.sidebar {
-    width: 40%;
-    height: 100%;
-    
-    overflow: hidden;
-    border-right: 1px solid rgba(0,0,0,0.25);
+@media (min-width: 500px) {
+    .image-wrapper {
+        width: 320px;
+        height: 320px;
+    }
 
-    background: rgb(90, 86, 86);
-}
-
-.listings {
-    display: grid; 
-    grid-template-rows: 100px;
-
-    height: 100%;
-}
-
-.listings .item {
-    display: block;
-
-    border-bottom: 1px solid #eee;
-    padding: 20px;
-    text-decoration: none;
-}
-
-.listings .item .title {
-    display: block;
-
-    color: #00853e;
-    font-weight: 700;
-}
-
-.quiet { 
-    color:#888; 
-}
+  }
