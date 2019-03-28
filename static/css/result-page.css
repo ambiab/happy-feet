@@ -92,6 +92,25 @@ a:hover {
     font-size: 50px;
 }
 
+.popup_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+
+    top: 25%;
+    left: 25%;
+
+    width: 850px;
+    height: 600px;
+
+    border-radius: 20px;
+
+    background: lightblue;
+}
+
 @media (min-width: 500px) {
     .image-wrapper {
         width: 320px;
