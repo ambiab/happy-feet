@@ -39,16 +39,7 @@ const mockData = [
         'feature': 'smooth rock outcrop 15m W of cairn',
         'url': "https://farm4.staticflickr.com/3260/2420663941_f2c4b038ae.jpg"
     },
-    { 
-        'name': 'Meall Dearg', 
-        'feature': 'trig point',
-        'url': "https://farm2.staticflickr.com/1800/29014532967_2c1b6fcd10.jpg"
-    },
-    { 
-        'name': 'Creag Each', 
-        'feature': 'small cairn on rocky prominence',
-        'url': "https://farm2.staticflickr.com/1800/29014532967_2c1b6fcd10.jpg"
-    },
+    
 ];
 
 document.addEventListener('DOMContentLoaded', function(){ 
