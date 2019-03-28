@@ -29,29 +29,41 @@ a:hover {
 }
 
 .results {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    justify-content: center;
+    grid-column-gap: 2px;
+    grid-row-gap: 15px;
+
     height: 100%;
     width: 100%;
 }
 
 .image-wrapper {
-    flex: 1 0 21%;
-    width: 100px;
-    height: 100px;
+    place-self: center stretch;
+
+    object-fit: cover;
+
+    width: 500px;
+    height: 500px;
+    background: blue;
+
     position: relative;
     overflow: hidden;
     border-radius: 50%;
+
+    margin: 10px;
 }
 
 .image-wrapper img {
-    display: inline;
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
     margin: 0 auto;
-    margin-left: (-25)%;
     height: 100%;
-    width: auto;
+    width: 100%;
 }
 
 .sidebar {
