@@ -30,23 +30,28 @@ a:hover {
 
 .results {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 
     justify-content: center;
     height: 100%;
     width: 100%;
 }
 
-.image-tag {
-    background: url('') no-repeat center center fixed;
-    background-size: cover;
-
-    height: 100%;
+.image-wrapper {
+    flex: 1 0 21%;
+    width: 100px;
+    height: 100px;
+    position: relative;
     overflow: hidden;
+    border-radius: 50%;
+}
 
-    transition: background 1s ease-in-out;
-
-    opacity: 0.55;
+.image-wrapper img {
+    display: inline;
+    margin: 0 auto;
+    margin-left: (-25)%;
+    height: 100%;
+    width: auto;
 }
 
 .sidebar {
