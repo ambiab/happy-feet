@@ -45,6 +45,7 @@ const mockData = [
 document.addEventListener('DOMContentLoaded', function(){ 
     mockData.forEach(data => {
         const results = document.getElementById('results');
+        const popup = document.getElementById('popup');
 
         const imageWrapper = results.appendChild(document.createElement('div'));
         imageWrapper.className = 'image-wrapper';
@@ -52,10 +53,13 @@ document.addEventListener('DOMContentLoaded', function(){
         const imageTag = imageWrapper.appendChild(document.createElement('img'));
         imageTag.src = data.url
 
-        imageWrapper.addEventListener('click', function() {
+        imageTag.onclick = function() {
             console.log('click');
-        });
+            popup.style.opacity = '0.90';
+            popup.style.visibility = 'visible';
+        };
     });
+});
 
 function handleClose() {
     const popup = document.getElementById('popup');

@@ -66,6 +66,22 @@ a:hover {
     width: 100%;
 }
 
+.popup {
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+
+    visibility: hidden;
+
+    opacity: 0;
+    transition: opacity .5s ease-in-out .2s, visibility .3s ease-in-out .2s;
+}
+
 .close {
     position: absolute;
     right: 20px;
