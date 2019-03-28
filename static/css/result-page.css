@@ -5,13 +5,19 @@ body {
 
   height: 100vh;
 
-  background: rgb(43, 43, 53);
+  background: rgb(21, 29, 65);
 }
 
 h1 {
     font-family: 'Caveat Brush';
     font-size: 50px;
-    margin: 20px auto;
+
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+    border-bottom: 4px dotted rgb(213, 221, 230);
+    padding-bottom: 20px;
+
     font-weight: 400;
     color: rgb(213, 221, 230);
 }
@@ -38,15 +44,15 @@ a:hover {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
     grid-column-gap: 2px;
-    grid-row-gap: 15px;
+    grid-row-gap: 5px;
 
     height: 100%;
     width: 100%;
 }
 
 .image-wrapper {
-    width: 280px;
-    height: 280px;
+    width: 200px;
+    height: 200px;
     background: rgb(148, 172, 202);
 
     position: relative;
@@ -70,7 +76,10 @@ a:hover {
 }
 
 .popup {
-    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
     
     top: 0;
     left: 0;
@@ -92,7 +101,7 @@ a:hover {
 }
 
 .close i {
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .popup_content {
@@ -101,17 +110,24 @@ a:hover {
     justify-content: center;
     align-items: center;
     
-    position: absolute;
+    position: relative;
 
-    top: 25%;
-    left: 25%;
-
-    width: 850px;
-    height: 600px;
+    width: 600px;
+    height: 400px;
 
     border-radius: 20px;
 
-    background: lightblue;
+    background: rgb(32, 44, 100);
+    box-shadow: 10px 15px 60px 15px;
+}
+
+.popup_content-title {
+    font-size: 25px;
+    color: white;
+}
+
+.popup_content-feature {
+    color: white;
 }
 
 @media (min-width: 500px) {
