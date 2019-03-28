@@ -54,9 +54,7 @@ document.addEventListener('DOMContentLoaded', function(){
         imageTag.src = data.url
 
         imageTag.onclick = function() {
-            console.log('click');
-            popup.style.opacity = '0.90';
-            popup.style.visibility = 'visible';
+            handleClick(data);
         };
     });
 });
@@ -65,4 +63,15 @@ function handleClose() {
     const popup = document.getElementById('popup');
     popup.style.opacity = '0';
     popup.style.visibility = 'hidden';
+}
+
+function handleClick(data) {
+    const title = document.getElementById('popup_content-title');
+    const feature = document.getElementById('popup_content-feature');
+
+    popup.style.opacity = '0.90';
+    popup.style.visibility = 'visible';
+
+    title.innerHTML = data.name;
+    feature.innerHTML = data.feature;
 }
