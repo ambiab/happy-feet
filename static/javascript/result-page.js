@@ -52,5 +52,8 @@ document.addEventListener('DOMContentLoaded', function(){
         const imageTag = imageWrapper.appendChild(document.createElement('img'));
         imageTag.src = data.url
 
+        imageWrapper.addEventListener('click', function() {
+            console.log('click');
+        });
     });
 });
