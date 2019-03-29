@@ -96,6 +96,7 @@ li {
     text-align: left;
     padding-bottom: 2px;
     padding-top: 5px;
+    list-style-type: none;
 }
 
 .introduction {
