@@ -87,7 +87,7 @@ h1 {
     background-color: rgba(181, 229, 252, 0.993);
     overflow-x: hidden;
     padding-top: 30px;
-    transition: 3s;
+    transition: 0.5s;
 }
 
 li {
@@ -96,6 +96,7 @@ li {
     text-align: left;
     padding-bottom: 2px;
     padding-top: 5px;
+    list-style-type: none;
 }
 
 .introduction {
