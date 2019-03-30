@@ -1,7 +1,5 @@
 import requests
-
-# API_KEY = 'AIzaSyDqWUawbCB2U4a501SduK0I60em_QSIWYc'
-GEOCODING_API_KEY = 'AIzaSyDu0t9vgP1OFQ90wJck2BQtGoMZIKVE4d0'
+from pprint import pprint
 
 def get_code_address(apiKey, address):
    url = ('https://maps.googleapis.com/maps/api/geocode/json?address={}&key={}'
@@ -19,6 +17,25 @@ def get_code_address(apiKey, address):
         lng = 0
 
    return lat, lng
+
+def get_photo_url(apiKey, name):
+        url = ('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key={}&text={}&tags=mountain&format=json&nojsoncallback=1'
+           .format(apiKey, name))
+
+        try:
+                response = requests.get(url)
+                resp_json_payload = response.json()
+                
+                imageData = resp_json_payload['photos']['photo'][0]
+                farmId = imageData['farm']
+                serverId = imageData['server']
+                imageId = imageData['id']
+                secret = imageData['secret']
+
+        except Exception as e:
+            return(str(e))
+
+        return 'https://farm{}.staticflickr.com/{}/{}_{}.jpg'.format(farmId, serverId, imageId, secret)
 
 if __name__ == '__main__':
    # get key
