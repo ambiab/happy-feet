@@ -20,10 +20,22 @@ def rendering_main_page():
 
 @app.route('/postcurrentlocation', methods = ['POST'])
 def post_current_position():
-    current_position = request.form['currentPosition']
-    print 'current'
-    print current_position
-    return jsonify(current_position)
+      print('Called POST post_current_position()')
+
+      try:
+            posUnicode = request.form.to_dict(flat=True)['currentPosition']
+            import ast
+            latLong = ast.literal_eval(posUnicode)
+            print('Current position %s and type %s' % (latLong, type(latLong)))
+            
+            res = data_config.post_nearest(**latLong)
+            print ('Nearest coords are: %s' % res)
+
+            return jsonify(res)
+            
+      except Exception as ex:
+            print(ex)
+            return jsonify({})
 
 @app.route('/postaddress', methods = ['POST'])
 def post_search_address():
