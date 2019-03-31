@@ -25,17 +25,21 @@ def get_photo_url(apiKey, name):
         try:
                 response = requests.get(url)
                 resp_json_payload = response.json()
-                
-                imageData = resp_json_payload['photos']['photo'][0]
-                farmId = imageData['farm']
-                serverId = imageData['server']
-                imageId = imageData['id']
-                secret = imageData['secret']
+                allPhotos = resp_json_payload['photos']['photo']
+
+                if allPhotos:
+                        imageData = resp_json_payload['photos']['photo'][0]
+                        farmId = imageData['farm']
+                        serverId = imageData['server']
+                        imageId = imageData['id']
+                        secret = imageData['secret']
+                        return 'https://farm{}.staticflickr.com/{}/{}_{}.jpg'.format(farmId, serverId, imageId, secret)
 
         except Exception as e:
-            return(str(e))
+            print e
+            
+        return ''
 
-        return 'https://farm{}.staticflickr.com/{}/{}_{}.jpg'.format(farmId, serverId, imageId, secret)
 
 if __name__ == '__main__':
    # get key
