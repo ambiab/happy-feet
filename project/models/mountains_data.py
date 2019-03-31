@@ -15,9 +15,10 @@ class Mountains(db.Model):
    latitude = db.Column(db.Float())
    longitude = db.Column(db.Float())
    gridrefxy = db.Column(db.String())
+   image_url = db.Column(db.String())
 
    def __init__(self, name, colheight, feature, streetmap, geograph, hillbagging,
-          xcoord, ycoord, latitude, longitude, gridrefxy ):
+          xcoord, ycoord, latitude, longitude, gridrefxy, image_url ):
         self.name = name
         self.colheight = colheight 
         self.feature = feature 
@@ -29,6 +30,7 @@ class Mountains(db.Model):
         self.latitude = latitude 
         self.longitude = longitude 
         self.gridrefxy = gridrefxy 
+        self.image_url = image_url 
 
    def __repr__(self):
         return '<id {}>'.format(self.id)
@@ -46,5 +48,6 @@ class Mountains(db.Model):
             'ycoord': self.ycoord,
             'latitude': self.latitude,
             'longitude': self.longitude,
-            'gridrefxy': self.gridrefxy
+            'gridrefxy': self.gridrefxy,
+            'image_url': self.image_url
         }
