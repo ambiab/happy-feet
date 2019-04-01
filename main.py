@@ -28,13 +28,13 @@ def post_current_position():
             latLong = ast.literal_eval(posUnicode)
             print('Current position %s and type %s' % (latLong, type(latLong)))
             
-            res = data_config.post_nearest(**latLong)
-            # resWithImages = data_config.get_photo_urls(res)
-             
-            # print (resWithImages)
-            print ('Nearest coords are: %s' % res)
+            nearestLocations = data_config.post_nearest(**latLong)
+            print ('Nearest coords are: %s' % nearestLocations)
 
-            return jsonify(res)
+            respWithImages = data_config.get_photo_urls(nearestLocations)
+            print (respWithImages)
+
+            return jsonify(respWithImages)
             
       except Exception as ex:
             print(ex)
@@ -46,15 +46,15 @@ def post_search_address():
             address= request.form['address']
             latLong = get_code_address(GEOCODING_API_KEY, address)
 
-            print('Current position %s and type %s' % (latLong, type(latLong)))
+            # print('Current position %s and type %s' % (latLong, type(latLong)))
             
-            res = data_config.post_nearest(*latLong)
-            print ('Nearest coords are: %s' % res)
+            nearestLocations = data_config.post_nearest(*latLong)
+            print ('Nearest coords are: %s and type %s' % (nearestLocations, type(nearestLocations)))
 
-            resWithImages = data_config.get_photo_urls(res)
-            print (resWithImages)
+            respWithImages = data_config.get_photo_urls(nearestLocations)
+            print (respWithImages)
             
-            return jsonify(res)
+            return jsonify(respWithImages)
 
       except Exception as ex:
             print(ex)
