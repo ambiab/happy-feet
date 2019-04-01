@@ -29,6 +29,9 @@ def post_current_position():
             print('Current position %s and type %s' % (latLong, type(latLong)))
             
             res = data_config.post_nearest(**latLong)
+            # resWithImages = data_config.get_photo_urls(res)
+             
+            # print (resWithImages)
             print ('Nearest coords are: %s' % res)
 
             return jsonify(res)
@@ -39,10 +42,23 @@ def post_current_position():
 
 @app.route('/postaddress', methods = ['POST'])
 def post_search_address():
-      address = request.form['address']
-      result = get_code_address(GEOCODING_API_KEY, address)
-      
-      return jsonify(result)
+      try:
+            address= request.form['address']
+            latLong = get_code_address(GEOCODING_API_KEY, address)
+
+            print('Current position %s and type %s' % (latLong, type(latLong)))
+            
+            res = data_config.post_nearest(*latLong)
+            print ('Nearest coords are: %s' % res)
+
+            resWithImages = data_config.get_photo_urls(res)
+            print (resWithImages)
+            
+            return jsonify(res)
+
+      except Exception as ex:
+            print(ex)
+            return jsonify({})
 
 @app.route('/getall', methods = ['GET'])
 def get_all():
