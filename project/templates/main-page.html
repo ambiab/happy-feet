@@ -3,6 +3,7 @@
     <head>
         <!--Fonts-->
         <link rel="stylesheet" href="../static/css/main-page.css">
+        <link rel="stylesheet" href="../static/css/result-page.css">
 
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="../static/javascript/main-page.js"></script>
@@ -43,6 +44,7 @@
             </div>
 
             <div class='background-image-2'>
+                <div class="loader"></div>
                 <div class='getstarted'>Lets get started</div>
                 <div class='search-wrapper'>
                     <div class='search-wrapper--button'>
@@ -54,6 +56,27 @@
                         <form id='search-location' onsubmit="searchLocation()" >
                             <input id='location-name' type='search' placeholder='Search'>
                         </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class='result-page'>
+                <div id='results' class='results'> 
+                </div>
+                <div id='popup' class='popup'>
+                    <div id='close' class='close' onclick='handleClose()'>
+                        <i class="fa fa-window-close" aria-hidden="true"></i>
+                    </div>
+        
+                    <div class='popup_content'>
+                        <h2 id='popup_content-title' class='popup_content-title'></h2>
+
+                        <h4 id='popup_content-feature' class='popup_content-feature'></h4>
+                        <h4>MOUNTAIN HEIGHT: <span id='popup_content-colheight'></span>
+                        </h4>
+                        
+                        <h4>STREETMAP: <a id='popup_content-streepmap'>Visit here</a></h4>
+                        
                     </div>
                 </div>
             </div>
