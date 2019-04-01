@@ -57,12 +57,28 @@ def get_all():
 @app.route('/getallIdsAndNames', methods = ['GET'])
 def get_name():
       try: 
+            from project import db
+
             mountain_ids_names = Mountains.query.with_entities(Mountains.id, Mountains.name).all()
             res = data_config.get_photo_urls(mountain_ids_names)
+
+            fn = lambda (id, url):  _updateMountainRow(id, url)
+            resp = list(map(fn, res))
+
+            print 'Attempting session commit '
+            db.session.commit()
+            print 'Commit successful!'
+            
             return jsonify(res)
             
       except Exception as e:
+            print 'Session commit failed due to %s' % e
             return(str(e))
       
+def _updateMountainRow(id, url): 
+
+      print 'Updating id %s with entry %s' % (id, url[:50])
+      Mountains.query.get(id).image_url = url
+
 server = WSGIServer(('127.0.0.1', 5001), app)
 server.serve_forever()
