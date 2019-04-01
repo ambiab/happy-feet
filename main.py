@@ -72,7 +72,6 @@ def get_name():
       except Exception as e:
             print 'Session commit failed due to %s' % e
             return(str(e))
-
 def _updateMountainRow(id, url): 
 
       print 'Updating id %s with entry %s' % (id, url[:50])
