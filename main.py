@@ -21,7 +21,7 @@ def rendering_main_page():
 @app.route('/postcurrentlocation', methods = ['POST'])
 def post_current_position():
       print('Called POST post_current_position()')
-
+      
       try:
             posUnicode = request.form.to_dict(flat=True)['currentPosition']
             import ast
@@ -39,13 +39,11 @@ def post_current_position():
 
 @app.route('/postaddress', methods = ['POST'])
 def post_search_address():
-   address = request.form['address']
-   result = get_code_address(GEOCODING_API_KEY, address)
-   print address
-   print str(result)
-   return str(result)
+      address = request.form['address']
+      result = get_code_address(GEOCODING_API_KEY, address)
+      
+      return jsonify(result)
 
-   # return render_template("main-page.html", result=str(result[0])) 
 @app.route('/getall', methods = ['GET'])
 def get_all():
       try:
@@ -74,11 +72,12 @@ def get_name():
       except Exception as e:
             print 'Session commit failed due to %s' % e
             return(str(e))
-      
+
 def _updateMountainRow(id, url): 
 
       print 'Updating id %s with entry %s' % (id, url[:50])
       Mountains.query.get(id).image_url = url
+
 
 server = WSGIServer(('127.0.0.1', 5001), app)
 server.serve_forever()
