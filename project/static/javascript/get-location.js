@@ -32,9 +32,13 @@ function getLocation() {
 function searchLocation() {
   const address = document.getElementById('location-name').value;
 
-  $.post('/postaddress', {
+  const dataToBeSent = {
     address: address
-  });
+  }
+
+  $.post('/postaddress', dataToBeSent, function(data) {
+    document.addEventListener('DOMContentLoaded', updateResultsPage(data));
+  }, 'json');
 }
 
 function updateResultsPage(locationResp){ 
