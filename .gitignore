@@ -1,2 +1,3 @@
 # api keys
-.env    
+.env
+*.pyc
