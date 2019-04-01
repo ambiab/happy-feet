@@ -1,11 +1,12 @@
 window.onload = function() {
-
   $('#search-location').submit(function(e){
     e.preventDefault();
   });
 }
 
 function getLocation() {
+  $('.loader').css('visibility', 'visible');
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       const currentPosition = {
@@ -30,6 +31,8 @@ function getLocation() {
 }
 
 function searchLocation() {
+  $('.loader').css('visibility', 'visible');
+  
   const address = document.getElementById('location-name').value;
 
   const dataToBeSent = {
@@ -42,6 +45,10 @@ function searchLocation() {
 }
 
 function updateResultsPage(locationResp){ 
+  if (locationResp) {
+    $('.loader').css('visibility', 'hidden');
+  }
+
   locationResp.forEach(data => {
       const results = document.getElementById('results');
       const popup = document.getElementById('popup');
