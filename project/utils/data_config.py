@@ -3,8 +3,8 @@ from project.settings import FLIRCK_API_KEY
 
 def get_photo_urls(mountain_ids_names):
    try: 
-      fn = lambda (id, name):  (id, get_photo_url(FLIRCK_API_KEY, name))
-      resp = list(map(fn, mountain_ids_names[5559:7000]))
+      fn = lambda (name):  (get_photo_url(FLIRCK_API_KEY, name))
+      resp = list(map(fn, mountain_ids_names))
       return resp
 
    except Exception as e:
