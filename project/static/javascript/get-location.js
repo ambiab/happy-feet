@@ -57,7 +57,7 @@ function updateResultsPage(locationResp){
       imageWrapper.className = 'image-wrapper';
 
       const imageTag = imageWrapper.appendChild(document.createElement('img'));
-      imageTag.src = data.url
+      imageTag.src = data[7]
 
       imageTag.onclick = function() {
           handleClick(data);
@@ -74,10 +74,14 @@ function handleClose() {
 function handleClick(data) {
   const title = document.getElementById('popup_content-title');
   const feature = document.getElementById('popup_content-feature');
+  const colHeight = document.getElementById('popup_content-colheight');
+  const streetmap = document.getElementById('popup_content-streepmap');
 
   popup.style.opacity = '0.90';
   popup.style.visibility = 'visible';
 
   title.innerHTML = data[0];
-  feature.innerHTML = data[1];
+  feature.innerHTML = data[2];
+  colHeight.innerHTML = data[1];
+  streetmap.href = data[3];
 }

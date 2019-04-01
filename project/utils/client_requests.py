@@ -28,7 +28,7 @@ def get_photo_url(apiKey, name):
                 allPhotos = resp_json_payload['photos']['photo']
 
                 if allPhotos:
-                        imageData = resp_json_payload['photos']['photo'][0]
+                        imageData = resp_json_payload['photos']['photo'][1]
                         farmId = imageData['farm']
                         serverId = imageData['server']
                         imageId = imageData['id']
