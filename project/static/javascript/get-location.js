@@ -67,6 +67,6 @@ function handleClick(data) {
   popup.style.opacity = '0.90';
   popup.style.visibility = 'visible';
 
-  title.innerHTML = data.name;
-  feature.innerHTML = data.feature;
+  title.innerHTML = data[0];
+  feature.innerHTML = data[1];
 }
