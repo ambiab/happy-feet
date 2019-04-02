@@ -89,6 +89,6 @@ function handleClick(data) {
 
   title.innerHTML = data[0];
   feature.innerHTML = data[2];
-  colHeight.innerHTML = data[1];
+  colHeight.innerHTML = `${data[1]} m`;
   streetmap.href = data[3];
 }
