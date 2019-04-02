@@ -65,6 +65,9 @@ function updateResultsPage(locationResp){
        } else {
        const errorTag = imageWrapper.appendChild(document.createElement('p'));
        errorTag.innerText = "Image Unavailable";
+       errorTag.onclick = function() {
+         handleClick(data);
+       }
        }
      });
   }
