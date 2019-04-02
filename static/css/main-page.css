@@ -1,0 +1,169 @@
+body, html {
+    height: 100%;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Caveat Brush';
+    font-size: 90px;
+}
+
+.background-image-1 {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+
+    position: relative;
+    width: 100%;
+    height: 550px;
+
+    background: url(../sources/images/hiking.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: 0.6;
+}
+
+.background-image-2 {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    width: 100%;
+    height: 550px;
+
+    background: url(../sources/images/hiking-2.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: 0.6;
+}
+
+.getstarted {
+    border: 2px solid rgb(87, 92, 87);
+    border-radius: 20px;
+
+    font-family: 'Caveat Brush';
+
+    font-size: 30px;
+
+    padding: 40px;
+    margin-top: 50px;
+    background: rgba(121, 128, 120, 0.85)
+}
+
+.menu-button {
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 20px;
+    height: 20px;
+}
+
+.close-button {
+    cursor: pointer;
+    position: relative;
+    left: 130px;
+}
+
+
+.menu {
+    min-height: 100%;
+    min-width: 10%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(181, 229, 252, 0.993);
+    overflow-x: hidden;
+    padding-top: 30px;
+    transition: 0.5s;
+}
+
+li {
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    padding-bottom: 2px;
+    padding-top: 5px;
+    list-style-type: none;
+}
+
+.introduction {
+    position: relative;
+
+    padding: 50px 80px;
+
+    color: #777;
+    background-color: rgb(120, 171, 201);
+    text-align: center;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: row;
+    
+   margin-top: 20px;
+}
+
+.search-wrapper--button {
+    width: 100px;
+}
+
+#get-current-location {
+    border-radius: 20px;
+
+    background: rgb(107, 104, 104);
+    border: 2px solid rgb(107, 104, 104);
+
+    padding: 8px 10px;
+
+    color: peachpuff;
+
+    margin-left: 40px;
+}
+
+#search-location input[type=search] {
+    position: absolute;
+
+    background: peachpuff url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+    padding: 8px 10px;
+    width: 38px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+
+#search-location input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+
+#search-location input[type=search]:hover {
+	background-color: #fff;
+}
+#search-location input:-moz-placeholder {
+	color: transparent;
+}
+#search-location input::-webkit-input-placeholder {
+	color: transparent;
+}
