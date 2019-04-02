@@ -78,6 +78,16 @@ a:hover {
     width: 100%;
 }
 
+.image-wrapper p {
+    position: absolute;
+
+    top: 25%;
+
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
 .popup {
     display: flex;
     align-items: center;
@@ -127,17 +137,35 @@ a:hover {
 }
 
 .popup_content-title {
-    font-size: 25px;
+    font-size: 55px;
     color: white;
 }
 
 .popup_content-feature {
     color: white;
+
+    border: 2px dotted white;
+    padding: 15px;
+}
+
+#popup_content-streepmap {
+    color: rgb(223, 215, 215)
+}
+
+#popup_content-streepmap:hover {
+    color: pink;
 }
 
 @media (min-width: 500px) {
     .image-wrapper {
         width: 300px;
         height: 300px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .image-wrapper {
+        width: 400px;
+        height: 400px;
     }
 }
