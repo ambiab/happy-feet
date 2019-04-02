@@ -56,14 +56,18 @@ function updateResultsPage(locationResp){
       const imageWrapper = results.appendChild(document.createElement('div'));
       imageWrapper.className = 'image-wrapper';
 
-      const imageTag = imageWrapper.appendChild(document.createElement('img'));
-      imageTag.src = data[7]
-
-      imageTag.onclick = function() {
-          handleClick(data);
-      };
-  });
-}
+      if (data[7]) {
+        const imageTag = imageWrapper.appendChild(document.createElement('img'));
+        imageTag.src = data[7]
+        imageTag.onclick = function() {
+            handleClick(data);
+        };
+       } else {
+       const errorTag = imageWrapper.appendChild(document.createElement('p'));
+       errorTag.innerText = "Image Unavailable";
+       }
+     });
+  }
 
 function handleClose() {
   const popup = document.getElementById('popup');
